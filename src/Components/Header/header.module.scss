@@ -1,0 +1,33 @@
+@import '../../scss/colors.scss';
+
+.headerContainer {
+  display: flex;
+  width: 100vw;
+  height: 4rem;
+  background: $primary;
+  justify-content: center;
+  align-items: center;
+
+  .linkContainer {
+    display: flex;
+    & a {
+      color: $header-link;
+      border-radius: 10px;
+      padding: 0.9rem 3rem;
+      font-size: 1em;
+      text-decoration: none;
+      display: flex;
+      height: fit-content;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 600;
+      transition: 0.3s ease all;
+
+      &:hover {
+        color: lighten($header-link, 30%);
+        background: lighten($primary, 10%);
+        transition: 0.3s ease all;
+      }
+    }
+  }
+}

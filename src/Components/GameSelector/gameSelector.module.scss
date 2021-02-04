@@ -1,0 +1,77 @@
+@import '../../scss/colors.scss';
+
+.mainContainer {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: center;
+
+  .gameSwitch {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    background: darken($primary, 2%);
+    width: auto;
+    height: 2.3rem;
+    margin: 0 0.5rem;
+    transition: 0.3s ease all;
+
+    &:active {
+      transform: translateX(-5px);
+    }
+
+    .gameCircle {
+      height: 100%;
+      width: 2.3rem;
+      border-radius: 25px;
+      background: lighten($primary, 20%);
+    }
+
+    & span {
+      color: white;
+      font-size: 0.8em;
+      padding: 0 1rem 0 0.5rem;
+    }
+
+    & img {
+      width: 1.4rem;
+      height: 63%;
+      padding-left: 1rem;
+    }
+
+    &:hover {
+      transition: 0.3s ease all;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba($black, 0.2); /* x, y, blur color */
+      background-color: $primary;
+      color: $black;
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba($black, 0.2); /* x, y, blur color */
+    }
+
+    &.animated {
+      animation: moveInUp 0.5s ease-out 0.75s;
+      animation-fill-mode: backwards; /* start animation from the beginning */
+    }
+
+    &::after {
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+  }
+}
