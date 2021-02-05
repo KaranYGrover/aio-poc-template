@@ -6,6 +6,7 @@ import {
   ChartSection,
 } from 'Components';
 import { GameProvider } from 'GameContext';
+import {default as HeatMap}  from './HeatMap/HeatMap';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <GameSelector />
       <VideoSection />
       <ChartSection />
+      <HeatMap/>
     </GameProvider>
   );
 }
